@@ -1,10 +1,15 @@
 import {
-  profilePortrait,
+  storyCreativeOperator,
   styleReference,
   styleArch,
   styleCity,
   stylePoster,
   styleTemple,
+  toolkitCreativeDirection,
+  toolkitEventOps,
+  toolkitMarketing,
+  toolkitMedia,
+  toolkitProposal,
 } from "../assets";
 
 export const navLinks = [
@@ -74,25 +79,31 @@ const portfolio = [
     name: "Thiết kế Proposal",
     description:
       "Xây dựng proposal có câu chuyện, moodboard, layout rõ ràng và visual đủ mạnh để khách hàng hình dung được trải nghiệm sự kiện ngay từ trang đầu.",
-    image: stylePoster,
+    image: toolkitProposal,
   },
   {
     name: "Quản trị dự án sự kiện",
     description:
       "Điều phối timeline, nhân sự, vendor, ngân sách và show-flow như một hành trình có điểm đến rõ ràng từ concept đến show day.",
-    image: styleCity,
+    image: toolkitEventOps,
   },
   {
     name: "Marketing Planner",
     description:
       "Lên thông điệp, kênh truyền thông, lịch nội dung và nhịp khuếch đại để sự kiện có sức hút trước, trong và sau chương trình.",
-    image: styleArch,
+    image: toolkitMarketing,
   },
   {
     name: "Media",
     description:
       "Định hướng góc quay, ảnh, recap, short-form content và visual story để biến tư liệu sự kiện thành tài sản truyền thông dài hạn.",
-    image: styleTemple,
+    image: toolkitMedia,
+  },
+  {
+    name: "Creative Direction",
+    description:
+      "Kết nối concept, mood, key visual và nhịp trải nghiệm thành một ngôn ngữ sáng tạo nhất quán, đủ khác biệt để khách hàng nhận ra dấu ấn CircleT.",
+    image: toolkitCreativeDirection,
   },
 ];
 
@@ -102,7 +113,7 @@ const storyChapters = [
     title: "The Creative Operator",
     description:
       "Đặng Hoàng Trường là nhân vật chính của portfolio này: một creative event manager kết nối ý tưởng, con người, hình ảnh và nhịp vận hành thành một trải nghiệm có dấu ấn riêng.",
-    image: profilePortrait,
+    image: storyCreativeOperator,
   },
   {
     eyebrow: "Protocol 01",
