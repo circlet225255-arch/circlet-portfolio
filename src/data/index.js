@@ -1,10 +1,5 @@
 import {
   storyCreativeOperator,
-  styleReference,
-  styleArch,
-  styleCity,
-  stylePoster,
-  styleTemple,
   toolkitCreativeDirection,
   toolkitEventOps,
   toolkitMarketing,
@@ -74,38 +69,84 @@ const experiences = [
   },
 ];
 
-const portfolio = [
+const personalProfile = [
+  {
+    label: "Name",
+    value: "Đặng Hoàng Trường",
+  },
+  {
+    label: "Birth",
+    value: "25/05/2005",
+  },
+  {
+    label: "Campus",
+    value: "Sinh viên trường Đại học Công nghệ TP.HCM (HUTECH)",
+  },
+];
+
+const careerModules = [
   {
     name: "Thiết kế Proposal",
+    tag: "Creative Deck",
     description:
-      "Xây dựng proposal có câu chuyện, moodboard, layout rõ ràng và visual đủ mạnh để khách hàng hình dung được trải nghiệm sự kiện ngay từ trang đầu.",
+      "Xây dựng proposal có concept, moodboard, key visual và flow trải nghiệm đủ rõ để khách hàng hiểu nhanh giá trị ý tưởng.",
     image: toolkitProposal,
   },
   {
-    name: "Quản trị dự án sự kiện",
+    name: "Quản trị sự kiện",
+    tag: "Event Ops",
     description:
-      "Điều phối timeline, nhân sự, vendor, ngân sách và show-flow như một hành trình có điểm đến rõ ràng từ concept đến show day.",
+      "Theo dõi timeline, nhân sự, vendor, checklist và show-flow để ý tưởng có thể vận hành được trong thực tế.",
     image: toolkitEventOps,
   },
   {
-    name: "Marketing Planner",
+    name: "Social Media",
+    tag: "Media Signal",
     description:
-      "Lên thông điệp, kênh truyền thông, lịch nội dung và nhịp khuếch đại để sự kiện có sức hút trước, trong và sau chương trình.",
-    image: toolkitMarketing,
-  },
-  {
-    name: "Media",
-    description:
-      "Định hướng góc quay, ảnh, recap, short-form content và visual story để biến tư liệu sự kiện thành tài sản truyền thông dài hạn.",
+      "Định hướng nội dung social, recap, short-form và nhịp truyền thông để sự kiện có sức sống trước và sau show.",
     image: toolkitMedia,
   },
   {
-    name: "Creative Direction",
+    name: "Tạo website",
+    tag: "Digital Touchpoint",
     description:
-      "Kết nối concept, mood, key visual và nhịp trải nghiệm thành một ngôn ngữ sáng tạo nhất quán, đủ khác biệt để khách hàng nhận ra dấu ấn CircleT.",
+      "Tư duy xây dựng website portfolio, landing page và trải nghiệm online như một điểm chạm nhận diện thương hiệu.",
+    image: toolkitMarketing,
+  },
+  {
+    name: "Marketing",
+    tag: "Campaign Planner",
+    description:
+      "Lên thông điệp, kênh triển khai và kế hoạch nội dung để ý tưởng được khuếch đại đúng nhóm khách hàng.",
+    image: toolkitCreativeDirection,
+  },
+  {
+    name: "Design",
+    tag: "Visual System",
+    description:
+      "Kết hợp bố cục, màu sắc, typography và hình ảnh để tạo hệ visual nhất quán cho proposal, media và event identity.",
     image: toolkitCreativeDirection,
   },
 ];
+
+const softSkills = [
+  "Giao tiếp tốt",
+  "Tiếng Anh giao tiếp",
+  "Sử dụng AI và các công cụ sáng tạo",
+];
+
+const educationStats = [
+  {
+    label: "Achievement",
+    value: "Tốt nghiệp bằng giỏi",
+  },
+  {
+    label: "GPA",
+    value: "3.3",
+  },
+];
+
+const hobbies = ["Thể thao", "Nghệ thuật", "Âm nhạc"];
 
 const storyChapters = [
   {
@@ -115,41 +156,6 @@ const storyChapters = [
       "Đặng Hoàng Trường là nhân vật chính của portfolio này: một creative event manager kết nối ý tưởng, con người, hình ảnh và nhịp vận hành thành một trải nghiệm có dấu ấn riêng.",
     image: storyCreativeOperator,
   },
-  {
-    eyebrow: "Protocol 01",
-    title: "The Brief Signal",
-    description:
-      "Khách hàng bước vào thế giới của ý tưởng. Mỗi brief được đọc như trang đầu của một cuốn truyện: có bối cảnh, nhân vật, mục tiêu và cảm xúc cần được đánh thức.",
-    image: styleReference,
-  },
-  {
-    eyebrow: "Protocol 02",
-    title: "Proposal As A Neon Map",
-    description:
-      "Proposal không chỉ là slide trình bày. Nó là bản đồ dẫn khách hàng đi qua concept, visual mood, flow trải nghiệm và lý do vì sao sự kiện này đáng để đầu tư.",
-    image: stylePoster,
-  },
-  {
-    eyebrow: "Protocol 03",
-    title: "Project City Grid",
-    description:
-      "Một sự kiện được vận hành như một thành phố sống động: nhiều đội nhóm, nhiều nhà cung cấp, nhiều điểm chạm, tất cả cần chung một nhịp điều phối.",
-    image: styleCity,
-  },
-  {
-    eyebrow: "Protocol 04",
-    title: "Campaign Signal",
-    description:
-      "Marketing planner tạo ra tín hiệu để khán giả nhìn thấy, ghi nhớ và muốn tham gia. Mỗi kênh truyền thông là một khung tranh trong cùng một câu chuyện.",
-    image: styleArch,
-  },
-  {
-    eyebrow: "Protocol 05",
-    title: "Media Afterglow",
-    description:
-      "Sau show day, media giữ lại ánh sáng của trải nghiệm: recap, ảnh, short video và case study biến khoảnh khắc thành tài sản thương hiệu dài hạn.",
-    image: styleTemple,
-  },
 ];
 
-export { experiences, portfolio, storyChapters };
+export { careerModules, educationStats, experiences, hobbies, personalProfile, softSkills, storyChapters };
