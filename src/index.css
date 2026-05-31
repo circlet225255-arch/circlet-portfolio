@@ -59,6 +59,38 @@ body,
   background: #030617;
 }
 
+.parallax::before,
+.parallax::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.parallax::before {
+  z-index: 4;
+  opacity: 0.68;
+  background:
+    linear-gradient(118deg, transparent 0 54%, rgba(255, 43, 214, 0.22) 54.4% 55%, transparent 55.4%),
+    linear-gradient(118deg, transparent 0 63%, rgba(25, 247, 255, 0.18) 63.2% 63.7%, transparent 64%),
+    radial-gradient(ellipse at 76% 68%, rgba(255, 43, 214, 0.34), transparent 25%),
+    radial-gradient(ellipse at 84% 42%, rgba(25, 247, 255, 0.22), transparent 22%),
+    linear-gradient(0deg, rgba(3, 6, 23, 0.92) 0%, rgba(3, 6, 23, 0.38) 20%, transparent 46%),
+    repeating-linear-gradient(105deg, transparent 0 92px, rgba(25, 247, 255, 0.12) 94px, transparent 97px);
+  mix-blend-mode: screen;
+}
+
+.parallax::after {
+  z-index: 5;
+  opacity: 0.55;
+  background:
+    repeating-linear-gradient(102deg, transparent 0 34px, rgba(25, 247, 255, 0.16) 35px, transparent 37px),
+    repeating-linear-gradient(180deg, transparent 0 12px, rgba(247, 251, 255, 0.08) 13px, transparent 14px),
+    linear-gradient(90deg, rgba(3, 6, 23, 0.52), transparent 34%, rgba(3, 6, 23, 0.12));
+  mix-blend-mode: screen;
+  animation: cityRain 9s linear infinite;
+}
+
 .parallax > * {
   grid-area: stack;
 }
@@ -68,18 +100,18 @@ body,
   height: 100%;
   min-height: 100vh;
   object-fit: cover;
-  object-position: center;
-  transform: scale(1.04);
-  filter: saturate(1.18) contrast(1.08) brightness(0.72);
+  object-position: 58% center;
+  transform: scale(1.02);
+  filter: saturate(1.28) contrast(1.12) brightness(0.82);
 }
 
 .hero-scrim {
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(3, 6, 23, 0.96) 0%, rgba(3, 6, 23, 0.68) 46%, rgba(3, 6, 23, 0.18) 100%),
-    radial-gradient(circle at 72% 42%, rgba(255, 43, 214, 0.18), transparent 28%),
-    radial-gradient(circle at 88% 16%, rgba(25, 247, 255, 0.22), transparent 30%),
-    linear-gradient(0deg, #030617 0%, rgba(3, 6, 23, 0.12) 42%, rgba(3, 6, 23, 0.44) 100%);
+    linear-gradient(90deg, rgba(3, 6, 23, 0.9) 0%, rgba(3, 6, 23, 0.62) 40%, rgba(3, 6, 23, 0.08) 100%),
+    radial-gradient(circle at 72% 42%, rgba(255, 43, 214, 0.24), transparent 30%),
+    radial-gradient(circle at 88% 16%, rgba(25, 247, 255, 0.26), transparent 32%),
+    linear-gradient(0deg, #030617 0%, rgba(3, 6, 23, 0.08) 42%, rgba(3, 6, 23, 0.38) 100%);
 }
 
 .hero-scrim::before,
@@ -113,9 +145,9 @@ body,
   aspect-ratio: 1;
   border-radius: 999px;
   background:
-    radial-gradient(circle, rgba(247, 251, 255, 0.78), rgba(25, 247, 255, 0.28) 34%, rgba(255, 43, 214, 0.2) 58%, transparent 72%);
-  filter: blur(0.2px) drop-shadow(0 0 52px rgba(25, 247, 255, 0.42));
-  opacity: 0.82;
+    radial-gradient(circle, rgba(247, 251, 255, 0.74), rgba(25, 247, 255, 0.34) 30%, rgba(255, 43, 214, 0.28) 54%, transparent 70%);
+  filter: blur(0.2px) drop-shadow(0 0 70px rgba(25, 247, 255, 0.5));
+  opacity: 0.9;
 }
 
 .poster-stripe {
@@ -127,8 +159,8 @@ body,
   height: 100%;
   background: linear-gradient(180deg, rgba(255, 43, 214, 0.78), rgba(25, 247, 255, 0.2) 52%, transparent);
   mix-blend-mode: screen;
-  opacity: 0.54;
-  box-shadow: 0 0 70px rgba(255, 43, 214, 0.35);
+  opacity: 0.68;
+  box-shadow: 0 0 90px rgba(255, 43, 214, 0.42);
 }
 
 .parallax__stars {
@@ -393,6 +425,19 @@ body,
 }
 
 @media (max-width: 767px) {
+  .hero-reference-bg {
+    object-position: 62% center;
+    filter: saturate(1.22) contrast(1.08) brightness(0.76);
+  }
+
+  .parallax::before {
+    opacity: 0.42;
+  }
+
+  .parallax::after {
+    opacity: 0.38;
+  }
+
   .parallax__content {
     align-items: flex-start;
     padding-left: 1.75rem;
@@ -414,6 +459,7 @@ body,
   .sun-disc {
     right: -3rem;
     top: 7rem;
+    opacity: 0.62;
   }
 
   .storybook-grid {
@@ -431,6 +477,15 @@ body,
 @media (max-width: 480px) {
   .parallax__content > * {
     max-width: 320px;
+  }
+}
+
+@keyframes cityRain {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: -180px 620px, 0 140px, 0 0;
   }
 }
 
