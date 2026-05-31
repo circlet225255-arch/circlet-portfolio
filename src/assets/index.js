@@ -5,6 +5,7 @@ import menu from "./menu.svg";
 
 import algorithms from "./algorithms.png";
 import devnotes from "./devnotes.png";
+import heroCyberpunk from "./hero-cyberpunk.png";
 import oscs from "./oscs.png";
 import profilePortrait from "./profile-portrait.jpg";
 import styleArch from "./style-arch.jpeg";
@@ -18,6 +19,7 @@ export {
   circletMark,
   close,
   devnotes,
+  heroCyberpunk,
   logo,
   menu,
   oscs,

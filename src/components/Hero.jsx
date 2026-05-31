@@ -1,11 +1,11 @@
 import { SpacemanCanvas } from ".";
 import Position from "./Position";
-import { styleCity } from "../assets";
+import { heroCyberpunk } from "../assets";
 
 const Hero = ({ scrollContainer }) => {
   return (
     <section className="parallax">
-      <img className="hero-reference-bg" src={styleCity} alt="" />
+      <img className="hero-reference-bg" src={heroCyberpunk} alt="" />
       <div className="hero-scrim" />
       <div className="sun-disc" />
       <div className="poster-stripe" />

@@ -70,7 +70,7 @@ body,
   object-fit: cover;
   object-position: center;
   transform: scale(1.04);
-  filter: hue-rotate(178deg) saturate(1.75) contrast(1.15) brightness(0.68);
+  filter: saturate(1.18) contrast(1.08) brightness(0.72);
 }
 
 .hero-scrim {
