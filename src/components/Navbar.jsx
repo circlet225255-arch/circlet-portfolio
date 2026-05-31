@@ -61,8 +61,8 @@ const Navbar = () => {
             scrollToSection("hero");
           }}
         >
-          <p className='text-[#fff6dc] text-[22px] lg:text-[30px] font-black tracking-[0.18em] pointer-events-auto cursor-pointer flex'>
-            DHT
+          <p className='text-[#f7fbff] text-[22px] lg:text-[30px] font-black tracking-[0.18em] pointer-events-auto cursor-pointer flex drop-shadow-[0_0_16px_rgba(25,247,255,0.55)]'>
+            CircleT
           </p>
         </Link>
 
@@ -71,12 +71,12 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`relative flex items-center ${
-                active === nav.id ? "text-[#fff6dc]" : "text-[#6fb5b4]"
-              } hover:text-[#fff6dc] text-[16px] lg:text-[20px] font-bold pointer-events-auto cursor-pointer`}
+                active === nav.id ? "text-[#f7fbff]" : "text-[#77b8c8]"
+              } hover:text-[#19f7ff] text-[16px] lg:text-[20px] font-bold pointer-events-auto cursor-pointer`}
               onClick={() => scrollToSection(nav.id)}
             >
               {active === nav.id && (
-                <div className="fixed right-10 w-2 h-6 lg:h-8 bg-[#f0b86a]"></div>
+                <div className="fixed right-10 w-2 h-6 lg:h-8 bg-[#ff2bd6] shadow-[0_0_18px_rgba(255,43,214,0.8)]"></div>
               )}
               <a href={`#${nav.id}`} onClick={(event) => event.preventDefault()}>{nav.title}</a>
             </li>

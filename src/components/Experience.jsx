@@ -15,18 +15,18 @@ const ExperienceCard = ({ experience, onClick, isActive, isMobile }) => {
       }`}
     >
       {(isActive || isMobile) && (
-        <div className="absolute left-0 top-0 bottom-0 w-3 md:w-5 bg-[#f0b86a] my-6 sm:block hidden"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-3 md:w-5 bg-[#ff2bd6] shadow-[0_0_24px_rgba(255,43,214,0.7)] my-6 sm:block hidden"></div>
       )}
       <h3
         className={`text-xl lg:text-2xl xl:text-3xl font-bold sm:pl-8 ${
-          isActive || isMobile ? "text-[#f0b86a]" : "text-[#497178]"
+          isActive || isMobile ? "text-[#ffde46]" : "text-[#456a83]"
         }`}
       >
         {experience.title}
       </h3>
       <p
         className={`text-md lg:text-lg xl:text-2xl sm:font-medium pt-2 sm:pl-8 ${
-          isActive || isMobile ? "text-[#fff6dc]" : "text-[#497178]"
+          isActive || isMobile ? "text-[#f7fbff]" : "text-[#456a83]"
         }`}
       >
         {experience.company_name} | {experience.date}
@@ -42,7 +42,7 @@ const ExperienceDetails = ({ experience }) => {
         {experience.details.map((detail, index) => (
           <li
             key={`experience-detail-${index}`}
-            className="text-[#b8d4d0] font-semibold text-[10px] xs:text-[14px] md:text-[18px] lg:text-[22px] xl:text-[28px] lg:leading-[34px]"
+            className="text-[#bceef4] font-semibold text-[10px] xs:text-[14px] md:text-[18px] lg:text-[22px] xl:text-[28px] lg:leading-[34px]"
             dangerouslySetInnerHTML={{ __html: detail }}
           />
         ))}
@@ -72,7 +72,7 @@ const Experience = () => {
     <div className="sm:my-20">
       <motion.div variants={textVariant()}>
         <h2 className={`${styles.sectionText} text-center`}>
-          Working Process
+          Operating System
         </h2>
       </motion.div>
 

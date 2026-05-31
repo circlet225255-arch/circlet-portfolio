@@ -17,6 +17,7 @@ html,
 body,
 #root {
   overflow-x: hidden;
+  background: #030617;
 }
 
 .hash-span {
@@ -55,7 +56,39 @@ body,
   display: grid;
   grid-template-areas: "stack";
   overflow: hidden;
-  background: #031920;
+  background: #030617;
+}
+
+.parallax::before,
+.parallax::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.parallax::before {
+  z-index: 4;
+  opacity: 0.68;
+  background:
+    linear-gradient(118deg, transparent 0 54%, rgba(255, 43, 214, 0.22) 54.4% 55%, transparent 55.4%),
+    linear-gradient(118deg, transparent 0 63%, rgba(25, 247, 255, 0.18) 63.2% 63.7%, transparent 64%),
+    radial-gradient(ellipse at 76% 68%, rgba(255, 43, 214, 0.34), transparent 25%),
+    radial-gradient(ellipse at 84% 42%, rgba(25, 247, 255, 0.22), transparent 22%),
+    linear-gradient(0deg, rgba(3, 6, 23, 0.92) 0%, rgba(3, 6, 23, 0.38) 20%, transparent 46%),
+    repeating-linear-gradient(105deg, transparent 0 92px, rgba(25, 247, 255, 0.12) 94px, transparent 97px);
+  mix-blend-mode: screen;
+}
+
+.parallax::after {
+  z-index: 5;
+  opacity: 0.55;
+  background:
+    repeating-linear-gradient(102deg, transparent 0 34px, rgba(25, 247, 255, 0.16) 35px, transparent 37px),
+    repeating-linear-gradient(180deg, transparent 0 12px, rgba(247, 251, 255, 0.08) 13px, transparent 14px),
+    linear-gradient(90deg, rgba(3, 6, 23, 0.52), transparent 34%, rgba(3, 6, 23, 0.12));
+  mix-blend-mode: screen;
+  animation: cityRain 9s linear infinite;
 }
 
 .parallax > * {
@@ -67,15 +100,40 @@ body,
   height: 100%;
   min-height: 100vh;
   object-fit: cover;
-  object-position: center;
-  transform: scale(1.04);
+  object-position: 58% center;
+  transform: scale(1.02);
+  filter: saturate(1.28) contrast(1.12) brightness(0.82);
 }
 
 .hero-scrim {
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(3, 25, 32, 0.94) 0%, rgba(3, 25, 32, 0.64) 45%, rgba(3, 25, 32, 0.16) 100%),
-    linear-gradient(0deg, #031920 0%, rgba(3, 25, 32, 0.08) 42%, rgba(3, 25, 32, 0.18) 100%);
+    linear-gradient(90deg, rgba(3, 6, 23, 0.9) 0%, rgba(3, 6, 23, 0.62) 40%, rgba(3, 6, 23, 0.08) 100%),
+    radial-gradient(circle at 72% 42%, rgba(255, 43, 214, 0.24), transparent 30%),
+    radial-gradient(circle at 88% 16%, rgba(25, 247, 255, 0.26), transparent 32%),
+    linear-gradient(0deg, #030617 0%, rgba(3, 6, 23, 0.08) 42%, rgba(3, 6, 23, 0.38) 100%);
+}
+
+.hero-scrim::before,
+.hero-scrim::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-scrim::before {
+  opacity: 0.32;
+  background:
+    linear-gradient(rgba(25, 247, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 43, 214, 0.08) 1px, transparent 1px);
+  background-size: 100% 42px, 54px 100%;
+}
+
+.hero-scrim::after {
+  opacity: 0.28;
+  background: repeating-linear-gradient(180deg, transparent 0 9px, rgba(247, 251, 255, 0.12) 10px, transparent 11px);
+  mix-blend-mode: screen;
 }
 
 .sun-disc {
@@ -86,8 +144,10 @@ body,
   width: clamp(12rem, 24vw, 26rem);
   aspect-ratio: 1;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(255, 239, 194, 0.82), rgba(240, 184, 106, 0.24) 62%, transparent 70%);
-  filter: blur(0.2px);
+  background:
+    radial-gradient(circle, rgba(247, 251, 255, 0.74), rgba(25, 247, 255, 0.34) 30%, rgba(255, 43, 214, 0.28) 54%, transparent 70%);
+  filter: blur(0.2px) drop-shadow(0 0 70px rgba(25, 247, 255, 0.5));
+  opacity: 0.9;
 }
 
 .poster-stripe {
@@ -97,9 +157,10 @@ body,
   top: 0;
   width: clamp(5rem, 10vw, 9rem);
   height: 100%;
-  background: linear-gradient(180deg, rgba(255, 90, 31, 0.62), rgba(255, 90, 31, 0.08) 52%, transparent);
+  background: linear-gradient(180deg, rgba(255, 43, 214, 0.78), rgba(25, 247, 255, 0.2) 52%, transparent);
   mix-blend-mode: screen;
-  opacity: 0.38;
+  opacity: 0.68;
+  box-shadow: 0 0 90px rgba(255, 43, 214, 0.42);
 }
 
 .parallax__stars {
@@ -195,10 +256,44 @@ body,
   width: min(52vw, 780px) !important;
   height: min(58vh, 620px) !important;
   pointer-events: auto;
+  filter: drop-shadow(0 0 38px rgba(25, 247, 255, 0.36));
+}
+
+.cyber-heading {
+  text-shadow:
+    0 0 14px rgba(25, 247, 255, 0.65),
+    0 0 34px rgba(255, 43, 214, 0.35),
+    0 18px 44px rgba(0, 0, 0, 0.75);
+}
+
+.cyber-heading::selection {
+  background: rgba(255, 43, 214, 0.5);
+}
+
+.cyber-pill {
+  border: 1px solid rgba(25, 247, 255, 0.42);
+  color: #f7fbff;
+  background:
+    linear-gradient(135deg, rgba(25, 247, 255, 0.12), rgba(255, 43, 214, 0.12)),
+    rgba(3, 6, 23, 0.58);
+  box-shadow: inset 0 0 18px rgba(25, 247, 255, 0.08), 0 0 22px rgba(25, 247, 255, 0.12);
+}
+
+.cyber-frame {
+  border: 1px solid rgba(25, 247, 255, 0.3);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34), 0 0 34px rgba(255, 43, 214, 0.12);
+}
+
+.cyber-image {
+  filter: hue-rotate(174deg) saturate(1.65) contrast(1.18) brightness(0.74);
 }
 
 .sand-grid {
   position: relative;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(255, 43, 214, 0.16), transparent 28%),
+    radial-gradient(circle at 86% 10%, rgba(25, 247, 255, 0.12), transparent 32%),
+    linear-gradient(180deg, #030617, #05071c 48%, #030617);
 }
 
 .sand-grid::before {
@@ -208,13 +303,227 @@ body,
   height: 18rem;
   pointer-events: none;
   background:
-    radial-gradient(circle at 14% 18%, rgba(240, 184, 106, 0.18), transparent 34%),
-    radial-gradient(circle at 84% 10%, rgba(111, 231, 212, 0.12), transparent 32%);
+    linear-gradient(rgba(25, 247, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 43, 214, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.5;
 }
 
 .skill-card {
-  border-bottom: 1px solid rgba(245, 215, 156, 0.08);
+  border-bottom: 1px solid rgba(25, 247, 255, 0.12);
   padding-bottom: clamp(1.5rem, 4vw, 3rem);
+}
+
+.profile-grid,
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.profile-panel {
+  position: relative;
+  grid-column: span 6;
+  overflow: hidden;
+  border: 1px solid rgba(25, 247, 255, 0.28);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(6, 16, 38, 0.86), rgba(18, 18, 54, 0.46)),
+    radial-gradient(circle at 78% 18%, rgba(255, 43, 214, 0.18), transparent 34%),
+    radial-gradient(circle at 12% 90%, rgba(25, 247, 255, 0.12), transparent 34%);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.26), 0 0 36px rgba(25, 247, 255, 0.1);
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  text-align: left;
+}
+
+.profile-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(25, 247, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 43, 214, 0.07) 1px, transparent 1px);
+  background-size: 100% 42px, 42px 100%;
+  opacity: 0.28;
+}
+
+.profile-panel--wide {
+  grid-column: span 8;
+}
+
+.profile-panel--hobbies {
+  grid-column: span 4;
+}
+
+.profile-panel__eyebrow {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: #19f7ff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.profile-panel h3 {
+  position: relative;
+  z-index: 1;
+  color: #f7fbff;
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  font-weight: 950;
+  line-height: 1;
+  text-shadow: 0 0 22px rgba(25, 247, 255, 0.25);
+}
+
+.profile-facts {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.profile-fact,
+.education-stat {
+  border-left: 3px solid #ff2bd6;
+  background: rgba(3, 6, 23, 0.42);
+  padding: 1rem;
+  box-shadow: inset 0 0 18px rgba(25, 247, 255, 0.05);
+}
+
+.profile-fact span,
+.education-stat span {
+  display: block;
+  color: #19f7ff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.profile-fact strong,
+.education-stat strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: #f7fbff;
+  font-size: clamp(1rem, 1.4vw, 1.28rem);
+  line-height: 1.45;
+}
+
+.profile-list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+  color: #d7faff;
+  font-weight: 800;
+}
+
+.profile-list li {
+  border: 1px solid rgba(25, 247, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(3, 6, 23, 0.4);
+  padding: 0.85rem 1rem;
+  list-style: none;
+}
+
+.education-grid,
+.hobby-chips {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.hobby-chips {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hobby-chips span {
+  border: 1px solid rgba(255, 43, 214, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 43, 214, 0.1);
+  padding: 0.85rem 1rem;
+  color: #f7fbff;
+  font-weight: 900;
+  text-align: center;
+}
+
+.career-module {
+  position: relative;
+  min-height: 430px;
+  grid-column: span 4;
+  overflow: hidden;
+  border: 1px solid rgba(25, 247, 255, 0.28);
+  border-radius: 18px;
+  background: #061026;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28), 0 0 36px rgba(255, 43, 214, 0.12);
+}
+
+.career-module__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.35) contrast(1.12) brightness(0.78);
+  transform: scale(1.03);
+  transition: transform 0.75s ease;
+}
+
+.career-module:hover .career-module__image {
+  transform: scale(1.09);
+}
+
+.career-module__shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(3, 6, 23, 0.08), rgba(3, 6, 23, 0.92)),
+    linear-gradient(90deg, rgba(3, 6, 23, 0.74), rgba(255, 43, 214, 0.12));
+}
+
+.career-module__content {
+  position: absolute;
+  left: 1.35rem;
+  right: 1.35rem;
+  bottom: 1.35rem;
+  text-align: left;
+}
+
+.career-module__content span {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(25, 247, 255, 0.4);
+  border-radius: 999px;
+  background: rgba(3, 6, 23, 0.58);
+  padding: 0.5rem 0.8rem;
+  color: #19f7ff;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.career-module__content h4 {
+  color: #f7fbff;
+  font-size: clamp(1.5rem, 2.5vw, 2.6rem);
+  font-weight: 950;
+  line-height: 1;
+  text-shadow: 0 0 22px rgba(25, 247, 255, 0.32), 0 0 34px rgba(255, 43, 214, 0.18);
+}
+
+.career-module__content p {
+  margin-top: 0.9rem;
+  color: #d7faff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.7;
 }
 
 .storybook-grid {
@@ -228,10 +537,10 @@ body,
   min-height: 430px;
   grid-column: span 6;
   overflow: hidden;
-  border: 1px solid rgba(245, 215, 156, 0.2);
-  border-radius: 28px;
-  background: #08242d;
-  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(25, 247, 255, 0.28);
+  border-radius: 18px;
+  background: #061026;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28), 0 0 36px rgba(255, 43, 214, 0.12);
 }
 
 .story-panel--lead {
@@ -257,8 +566,21 @@ body,
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(3, 25, 32, 0.04), rgba(3, 25, 32, 0.88)),
-    linear-gradient(90deg, rgba(3, 25, 32, 0.82), rgba(3, 25, 32, 0.18));
+    linear-gradient(180deg, rgba(3, 6, 23, 0.02), rgba(3, 6, 23, 0.92)),
+    linear-gradient(90deg, rgba(3, 6, 23, 0.88), rgba(255, 43, 214, 0.12));
+}
+
+.story-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(25, 247, 255, 0.12) 1px, transparent 1px),
+    repeating-linear-gradient(180deg, transparent 0 13px, rgba(247, 251, 255, 0.07) 14px, transparent 15px);
+  background-size: 100% 62px, 100% 100%;
+  mix-blend-mode: screen;
+  opacity: 0.28;
 }
 
 .story-panel__content {
@@ -272,11 +594,11 @@ body,
 .story-panel__content span {
   display: inline-flex;
   margin-bottom: 1rem;
-  border: 1px solid rgba(255, 246, 220, 0.36);
+  border: 1px solid rgba(25, 247, 255, 0.42);
   border-radius: 999px;
-  background: rgba(3, 25, 32, 0.42);
+  background: rgba(3, 6, 23, 0.58);
   padding: 0.55rem 0.9rem;
-  color: #6ee7d4;
+  color: #19f7ff;
   font-size: 0.72rem;
   font-weight: 900;
   letter-spacing: 0.28em;
@@ -286,7 +608,8 @@ body,
 
 .story-panel__content h3 {
   max-width: 720px;
-  color: #fff6dc;
+  color: #f7fbff;
+  text-shadow: 0 0 22px rgba(25, 247, 255, 0.35), 0 0 34px rgba(255, 43, 214, 0.24);
   font-size: clamp(2rem, 5vw, 4.75rem);
   font-weight: 950;
   line-height: 0.95;
@@ -299,19 +622,34 @@ body,
 .story-panel__content p {
   max-width: 720px;
   margin-top: 1rem;
-  color: #d8eee7;
+  color: #d7faff;
   font-size: clamp(0.95rem, 1.4vw, 1.12rem);
   line-height: 1.8;
 }
 
 .glass-panel {
-  border: 1px solid rgba(245, 215, 156, 0.28);
-  background: linear-gradient(135deg, rgba(6, 39, 49, 0.76), rgba(9, 42, 50, 0.36));
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.26);
+  border: 1px solid rgba(25, 247, 255, 0.28);
+  background:
+    linear-gradient(135deg, rgba(6, 16, 38, 0.84), rgba(18, 18, 54, 0.42)),
+    linear-gradient(90deg, rgba(25, 247, 255, 0.08), rgba(255, 43, 214, 0.08));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32), 0 0 34px rgba(25, 247, 255, 0.1);
   backdrop-filter: blur(18px);
 }
 
 @media (max-width: 767px) {
+  .hero-reference-bg {
+    object-position: 62% center;
+    filter: saturate(1.22) contrast(1.08) brightness(0.76);
+  }
+
+  .parallax::before {
+    opacity: 0.42;
+  }
+
+  .parallax::after {
+    opacity: 0.38;
+  }
+
   .parallax__content {
     align-items: flex-start;
     padding-left: 1.75rem;
@@ -323,17 +661,40 @@ body,
   }
 
   .scene-canvas {
-    width: 100% !important;
-    height: 38vh !important;
-    opacity: 0.72;
+    right: -3.5rem;
+    bottom: -4.5rem;
+    width: 92% !important;
+    height: 30vh !important;
+    opacity: 0.42;
   }
 
   .sun-disc {
     right: -3rem;
     top: 7rem;
+    opacity: 0.62;
   }
 
   .storybook-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-grid,
+  .career-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-panel,
+  .profile-panel--wide,
+  .profile-panel--hobbies,
+  .career-module {
+    grid-column: auto;
+  }
+
+  .career-module {
+    min-height: 390px;
+  }
+
+  .hobby-chips {
     grid-template-columns: 1fr;
   }
 
@@ -348,6 +709,15 @@ body,
 @media (max-width: 480px) {
   .parallax__content > * {
     max-width: 320px;
+  }
+}
+
+@keyframes cityRain {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: -180px 620px, 0 140px, 0 0;
   }
 }
 
