@@ -35,10 +35,10 @@ const Contact = () => {
         }}
         className='flex-[0.8] md:pb-40 mx-4 sm:mx-auto'
       >
-        <p className="mb-3 text-sm font-black uppercase tracking-[0.4em] text-[#6ee7d4]">Let's build</p>
+        <p className="mb-3 text-sm font-black uppercase tracking-[0.4em] text-[#19f7ff]">Open Channel</p>
         <h3 className={styles.sectionText}>Contact</h3>
-        <p className="mt-5 max-w-2xl text-lg leading-8 text-[#cce4dd]">
-          Nếu cần một event manager có tư duy creative, proposal mạnh và khả năng kéo dự án từ ý tưởng đến show day, hãy để lại lời nhắn.
+        <p className="mt-5 max-w-2xl text-lg leading-8 text-[#bceef4]">
+          Nếu cần một event manager có tư duy creative, proposal mạnh và khả năng kéo dự án từ ý tưởng đến show day, hãy gửi tín hiệu cho tôi.
         </p>
 
         <form
@@ -46,32 +46,32 @@ const Contact = () => {
           method="POST"
           className="mt-12 gap-4 flex flex-col"
         >
-          <span className='text-[#fff6dc] font-medium mt-3'>Full Name</span>
+          <span className='text-[#f7fbff] font-medium mt-3'>Full Name</span>
           <input
             type="text"
             name="name"
             placeholder="Tên của bạn"
-            className="bg-[#062731]/80 p-4 text-[#fff6dc] border border-[#f5d79c]/30 font-medium rounded-xl"
+            className="bg-[#061026]/80 p-4 text-[#f7fbff] border border-[#19f7ff]/35 font-medium rounded-xl outline-none focus:border-[#ff2bd6] focus:shadow-[0_0_28px_rgba(255,43,214,0.25)]"
           />
-          <span className='text-[#fff6dc] font-medium mt-3'>Email Address</span>
+          <span className='text-[#f7fbff] font-medium mt-3'>Email Address</span>
           <input
             type="text"
             name="email"
             placeholder="Email liên hệ"
-            className="bg-[#062731]/80 p-4 text-[#fff6dc] border border-[#f5d79c]/30 font-medium rounded-xl"
+            className="bg-[#061026]/80 p-4 text-[#f7fbff] border border-[#19f7ff]/35 font-medium rounded-xl outline-none focus:border-[#ff2bd6] focus:shadow-[0_0_28px_rgba(255,43,214,0.25)]"
           />
-          <span className='text-[#fff6dc] font-medium mt-3'>Message</span>
+          <span className='text-[#f7fbff] font-medium mt-3'>Message</span>
           <textarea
             name="message"
             placeholder="Nội dung bạn muốn trao đổi"
             rows="10"
-            className="bg-[#062731]/80 p-4 text-[#fff6dc] border border-[#f5d79c]/30 font-medium rounded-xl"
+            className="bg-[#061026]/80 p-4 text-[#f7fbff] border border-[#19f7ff]/35 font-medium rounded-xl outline-none focus:border-[#ff2bd6] focus:shadow-[0_0_28px_rgba(255,43,214,0.25)]"
           />
           <button
             type='submit'
-            className='bg-[#f0b86a] py-3 px-8 w-fit text-[#092a32] font-black shadow-md shadow-primary rounded-full'
+            className='bg-[#ffde46] py-3 px-8 w-fit text-[#061026] font-black shadow-[0_0_30px_rgba(255,222,70,0.35)] rounded-full'
           >
-            Send Message
+            Send Signal
           </button>
         </form>
       </motion.div>
