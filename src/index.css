@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap&subset=vietnamese");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap&subset=vietnamese");
 
 @tailwind base;
 @tailwind components;
@@ -251,12 +251,14 @@ body,
 .scene-canvas {
   position: absolute !important;
   z-index: 6;
-  right: 0;
-  bottom: 0;
-  width: min(52vw, 780px) !important;
-  height: min(58vh, 620px) !important;
+  right: -2vw;
+  bottom: -2vh;
+  width: min(58vw, 860px) !important;
+  height: min(68vh, 720px) !important;
   pointer-events: auto;
-  filter: drop-shadow(0 0 38px rgba(255, 151, 96, 0.36));
+  filter:
+    drop-shadow(0 0 60px rgba(255, 151, 96, 0.45))
+    drop-shadow(0 0 120px rgba(100, 160, 255, 0.28));
 }
 
 .cyber-heading {
@@ -661,11 +663,11 @@ body,
   }
 
   .scene-canvas {
-    right: -3.5rem;
-    bottom: -4.5rem;
-    width: 92% !important;
-    height: 30vh !important;
-    opacity: 0.42;
+    right: -2rem;
+    bottom: -3rem;
+    width: 100% !important;
+    height: 38vh !important;
+    opacity: 0.5;
   }
 
   .sun-disc {
