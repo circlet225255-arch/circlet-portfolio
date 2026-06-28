@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { close, menu } from "../assets";
+import { circletBrandBadge, close, menu } from "../assets";
 import { navLinks } from "../data";
 
 const Navbar = () => {
@@ -61,9 +61,15 @@ const Navbar = () => {
             scrollToSection("hero");
           }}
         >
-          <p className='text-[#f7fbff] text-[22px] lg:text-[30px] font-black tracking-[0.18em] pointer-events-auto cursor-pointer flex drop-shadow-[0_0_16px_rgba(25,247,255,0.55)]'>
-            CircleT
-          </p>
+          <div className="pointer-events-auto cursor-pointer group relative rounded-[10px] border border-[#e96d5e]/70 bg-black/60 p-[2px] shadow-[0_0_22px_rgba(255,43,214,0.45)] backdrop-blur-md">
+            <div className="absolute -inset-[1px] rounded-[10px] bg-[linear-gradient(120deg,rgba(25,247,255,0.8),rgba(255,43,214,0.9),rgba(255,243,64,0.7))] opacity-40 blur-[6px] transition-opacity duration-300 group-hover:opacity-80" />
+            <img
+              src={circletBrandBadge}
+              alt="CircleT CRT brand"
+              className="relative h-[36px] w-[122px] rounded-[8px] object-cover object-center sm:h-[46px] sm:w-[160px]"
+            />
+            <div className="pointer-events-none absolute inset-0 rounded-[10px] bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0)_42%)]" />
+          </div>
         </Link>
 
         <ul className='list-none hidden sm:flex flex-col gap-5'>
@@ -71,12 +77,12 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`relative flex items-center ${
-                active === nav.id ? "text-[#f7fbff]" : "text-[#77b8c8]"
-              } hover:text-[#19f7ff] text-[16px] lg:text-[20px] font-bold pointer-events-auto cursor-pointer`}
+                active === nav.id ? "text-[#fff4ec]" : "text-[#a09e7e]"
+              } hover:text-[#ff9760] text-[16px] lg:text-[20px] font-bold pointer-events-auto cursor-pointer`}
               onClick={() => scrollToSection(nav.id)}
             >
               {active === nav.id && (
-                <div className="fixed right-10 w-2 h-6 lg:h-8 bg-[#ff2bd6] shadow-[0_0_18px_rgba(255,43,214,0.8)]"></div>
+                <div className="fixed right-10 w-2 h-6 lg:h-8 bg-[#e96d5e] shadow-[0_0_18px_rgba(255,43,214,0.8)]"></div>
               )}
               <a href={`#${nav.id}`} onClick={(event) => event.preventDefault()}>{nav.title}</a>
             </li>

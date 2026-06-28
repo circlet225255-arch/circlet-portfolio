@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 import { experiences } from "../data";
@@ -15,18 +15,18 @@ const ExperienceCard = ({ experience, onClick, isActive, isMobile }) => {
       }`}
     >
       {(isActive || isMobile) && (
-        <div className="absolute left-0 top-0 bottom-0 w-3 md:w-5 bg-[#ff2bd6] shadow-[0_0_24px_rgba(255,43,214,0.7)] my-6 sm:block hidden"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-3 md:w-5 bg-[#e96d5e] shadow-[0_0_24px_rgba(255,43,214,0.7)] my-6 sm:block hidden"></div>
       )}
       <h3
         className={`text-xl lg:text-2xl xl:text-3xl font-bold sm:pl-8 ${
-          isActive || isMobile ? "text-[#ffde46]" : "text-[#456a83]"
+          isActive || isMobile ? "text-[#ffe69d]" : "text-[#6a7e6a]"
         }`}
       >
         {experience.title}
       </h3>
       <p
         className={`text-md lg:text-lg xl:text-2xl sm:font-medium pt-2 sm:pl-8 ${
-          isActive || isMobile ? "text-[#f7fbff]" : "text-[#456a83]"
+          isActive || isMobile ? "text-[#fff4ec]" : "text-[#6a7e6a]"
         }`}
       >
         {experience.company_name} | {experience.date}
@@ -42,7 +42,7 @@ const ExperienceDetails = ({ experience }) => {
         {experience.details.map((detail, index) => (
           <li
             key={`experience-detail-${index}`}
-            className="text-[#bceef4] font-semibold text-[10px] xs:text-[14px] md:text-[18px] lg:text-[22px] xl:text-[28px] lg:leading-[34px]"
+            className="text-[#ffd4b0] font-semibold text-[10px] xs:text-[14px] md:text-[18px] lg:text-[22px] xl:text-[28px] lg:leading-[34px]"
             dangerouslySetInnerHTML={{ __html: detail }}
           />
         ))}

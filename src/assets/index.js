@@ -1,4 +1,5 @@
 import close from "./close.svg";
+import circletBrandBadge from "./circlet-brand-badge.jpg";
 import circletMark from "./circlet-mark.png";
 import logo from "./logo.svg";
 import menu from "./menu.svg";
@@ -22,6 +23,7 @@ import toolkitProposal from "./toolkit-proposal.png";
 
 export {
   algorithms,
+  circletBrandBadge,
   circletMark,
   close,
   devnotes,

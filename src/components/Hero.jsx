@@ -1,4 +1,4 @@
-import { SpacemanCanvas } from ".";
+﻿import { SpacemanCanvas } from ".";
 import Position from "./Position";
 import { heroCyberpunk } from "../assets";
 
@@ -12,14 +12,14 @@ const Hero = ({ scrollContainer }) => {
 
       <div className='parallax__content'>
         <div className="w-full min-w-0 max-w-4xl">
-          <p className="mb-5 text-[13px] sm:text-[15px] font-bold tracking-[0.42em] uppercase text-[#6ee7d4]">
+          <p className="mb-5 text-[13px] sm:text-[15px] font-bold tracking-[0.42em] uppercase text-[#ffb891]">
             Cyberpunk Event Portfolio
           </p>
-          <h1 className='cyber-heading font-black text-[#f7fbff] text-[42px] xs:text-[58px] sm:text-[76px] md:text-[92px] xl:text-[108px] leading-[1.06]'>
+          <h1 className='cyber-heading font-black text-[#fff4ec] text-[42px] xs:text-[58px] sm:text-[76px] md:text-[92px] xl:text-[108px] leading-[1.06]'>
             Đặng Hoàng Trường
           </h1>
           <Position />
-          <p className="mt-14 max-w-2xl break-words text-[16px] sm:text-[20px] leading-8 text-[#d7faff]">
+          <p className="mt-14 max-w-2xl break-words text-[16px] sm:text-[20px] leading-8 text-[#ffe8d0]">
             Tôi thiết kế trải nghiệm sự kiện như một nhiệm vụ trong thành phố neon: có concept rõ, proposal sắc, vận hành chắc và media đủ mạnh để khách hàng nhớ lâu.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">

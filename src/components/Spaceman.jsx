@@ -1,4 +1,4 @@
-import { Float, useTexture } from "@react-three/drei";
+﻿import { Float, useTexture } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
 import { DoubleSide } from "three";
@@ -26,7 +26,7 @@ const CircleTBrandMark = () => {
               map={logoTexture}
               transparent
               alphaTest={0.05}
-              color={index % 2 === 0 ? "#ff2bd6" : "#19f7ff"}
+              color={index % 2 === 0 ? "#e96d5e" : "#ff9760"}
               opacity={0.24}
               side={DoubleSide}
               toneMapped={false}
@@ -48,9 +48,9 @@ const SpacemanCanvas = () => {
     <Canvas className="scene-canvas" camera={{ position: [0, 0, 4.2], fov: 42 }}>
       <Suspense fallback={null}>
         <ambientLight intensity={1.4} />
-        <directionalLight position={[4, 4, 3]} intensity={2.2} color="#19f7ff" />
-        <pointLight position={[-3, 1, 4]} intensity={5} color="#ff2bd6" />
-        <pointLight position={[3, -2, 4]} intensity={3.2} color="#ffde46" />
+        <directionalLight position={[4, 4, 3]} intensity={2.2} color="#ff9760" />
+        <pointLight position={[-3, 1, 4]} intensity={5} color="#e96d5e" />
+        <pointLight position={[3, -2, 4]} intensity={3.2} color="#ffe69d" />
         <CircleTBrandMark />
       </Suspense>
     </Canvas>

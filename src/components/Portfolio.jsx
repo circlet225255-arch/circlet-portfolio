@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import React from "react";
 
 import {
@@ -58,9 +58,9 @@ const Portfolio = () => {
   return (
     <div className='sand-grid text-center md:text-left md:px-20 lg:px-40'>
       <motion.div variants={textVariant()}>
-        <p className="mb-3 text-sm font-black uppercase tracking-[0.4em] text-[#19f7ff]">Mission Logs</p>
+        <p className="mb-3 text-sm font-black uppercase tracking-[0.4em] text-[#ff9760]">Mission Logs</p>
         <h2 className={`${styles.sectionText}`}>A Portfolio Told In Neon Chapters</h2>
-        <p className="mt-5 max-w-3xl text-[#bceef4] text-base sm:text-lg leading-8">
+        <p className="mt-5 max-w-3xl text-[#ffd4b0] text-base sm:text-lg leading-8">
           Bộ ảnh bạn cung cấp được chuyển thành những trang truyện cyberpunk: mỗi khung là một nhiệm vụ, mỗi kỹ năng là một tín hiệu dẫn khách hàng đi qua thế giới sự kiện của CircleT.
         </p>
       </motion.div>
@@ -70,9 +70,9 @@ const Portfolio = () => {
       </div>
 
       <motion.div variants={textVariant()} className="mt-20 md:mt-28">
-        <p className="mb-3 text-sm font-black uppercase tracking-[0.4em] text-[#19f7ff]">Identity Database</p>
+        <p className="mb-3 text-sm font-black uppercase tracking-[0.4em] text-[#ff9760]">Identity Database</p>
         <h2 className={`${styles.sectionText}`}>Creative Profile System</h2>
-        <p className="mt-5 max-w-3xl text-[#bceef4] text-base sm:text-lg leading-8">
+        <p className="mt-5 max-w-3xl text-[#ffd4b0] text-base sm:text-lg leading-8">
           Thông tin được sắp xếp lại như một hồ sơ nghề nghiệp: ưu tiên năng lực Creative, event, media và digital để khách hàng đọc nhanh đúng thế mạnh của bạn.
         </p>
       </motion.div>
@@ -118,7 +118,7 @@ const Portfolio = () => {
       </div>
 
       <motion.div variants={textVariant()} className="mt-20 md:mt-28">
-        <p className="mb-3 text-sm font-black uppercase tracking-[0.4em] text-[#19f7ff]">Priority Work</p>
+        <p className="mb-3 text-sm font-black uppercase tracking-[0.4em] text-[#ff9760]">Priority Work</p>
         <h2 className={`${styles.sectionText}`}>Cyber Creative Toolkit</h2>
       </motion.div>
 
